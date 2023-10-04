@@ -103,6 +103,26 @@ If needing to iterate on the options above, set `CF_FORCE_SYNCHRONIZE` to "true"
 !!! important
     These options are provided to empower you to get your server up and running quickly. Please help out by reporting an issue with the respective mod project. Ideally mod developers should [use correct registrations for one-sided client mods](https://docs.minecraftforge.net/en/latest/concepts/sides/#writing-one-sided-mods). Understandably, those code changes may be non-trivial, so mod authors can also add "Client" to the game versions when publishing.
 
+## Anecdotal Tips
+
+The Exlcude Client Mods section mentions that some mods may not be properly categorized. The purpose of this section is to include some tips from users on cursforge modded servers that may be helpful to other users looking to migrate and utilize the AUTO_CURSEFORGE feature.
+
+_Our server migrated from a CURSEFORGE type using a zipped server modack to the AUTO_CURSEFORGE type with the CF_PAGE_URL._
+
+_As a general rule of thumb and especially in regards to migrating, back up any previously saved world file and verify the backup is operable before relying on it._
+
+_The following recounts scenarios encountered:_ 
+
+ - _You may find yourself going from a server.jar to a client.jar._
+ - - **_This may not be an issue_**
+ - _The image will filter out most client-only side mods._
+ - - **_Developers may mis-label their repos_** 
+ - _Some mods may not load_
+ - - **_If the mod is not in your old server.jar, it is safe to exclude it_**
+ - - **_Texture Packs (client-side/visual only) are also safe to exclude_**
+ - _When you encounter a mod marked as a manual-download only, these should be provided in the `/downloads` folder_
+ - - **_Use underscores for any spaces in the filename_**
+
 ## Extra options
 
 Some modpacks come with world/save data via a worlds file and/or the overrides provided with the modpack. Either approach can be selected to set the `LEVEL` to the resulting saves directory by setting `CF_SET_LEVEL_FROM` to either:
